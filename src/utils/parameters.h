@@ -18,4 +18,8 @@ const float l = 33.0e-3;    // m
 const float a2 = 1.16e-7;
 const float a1 = 4.488e-12;
 
+//Constante de sustentação kl 
+const float kl = 1.734e-8;
+
+
 #endif
