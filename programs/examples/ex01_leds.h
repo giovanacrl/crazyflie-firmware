@@ -2,7 +2,7 @@
 #include "crazyflie.h"
 
 // Define red LED (right) as digital output object
-DigitalOut led(LED_RED_R,!false);
+DigitalOut led(LED_BLUE_L,!false);
 
 // Main program
 int main()
@@ -10,7 +10,8 @@ int main()
     // Blink LED every second
     while(true) 
     {
+        led = led;
+        wait(5);
         led = !led;
-        wait(0.5);
     }
 }
