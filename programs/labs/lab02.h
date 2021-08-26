@@ -12,8 +12,10 @@ PwmOut motor(MOTOR1);
 float control_motor (float omega_r)
 {
     float pwm;
-    pwm = 1*omega_r;
-    //pwm = 2.479*pow(10, -7)*pow(omega_r,2) - 0.0004551*omega_r;
+    //pwm = 1*omega_r;
+    float a2 = 1.16e-7;
+    float a1 = 4.488e-12;
+    pwm = a2*pow(omega_r, 2) + a1*omega_r;
     return pwm;
 }
 
@@ -22,7 +24,7 @@ int main ()
 {   
     motor.period(1.0/500.0);
     // Turn on motor 1 with 1.000 rad/s for 0.5 s
-    motor = control_motor(1000.0);
+    motor = control_motor(2000.0);
     wait (0.5) ;
     // Turn off motor 1
     motor = 0.0;
