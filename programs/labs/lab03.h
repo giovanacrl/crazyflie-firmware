@@ -14,6 +14,8 @@ float omega_2;
 float omega_3;
 float omega_4;
 
+
+
 //Converts desired angular velocity (rad/s) to PWM signal (%)
 float control_motor(float omega_r)
 {
@@ -35,11 +37,11 @@ void mixer(float f_t, float tau_phi, float tau_theta, float tau_psi)
     float t2 = 1/(4*kl*l);
     float t3 = 1/(4*kd);
 
-    omega_1 = sqrt(fabs(t1*f_t - t2*tau_phi - t2*tau_theta - t3*tau_psi));
-    omega_2 = sqrt(fabs(t1*f_t - t2*tau_phi + t2*tau_theta + t3*tau_psi));
-    omega_3 = sqrt(fabs(t1*f_t + t2*tau_phi + t2*tau_theta - t3*tau_psi));
-    omega_4 = sqrt(fabs(t1*f_t + t2*tau_phi - t2*tau_theta + t3*tau_psi));
-
+    omega_1 = sqrt(t1*f_t - t2*tau_phi - t2*tau_theta - t3*tau_psi);
+    omega_2 = sqrt(t1*f_t - t2*tau_phi + t2*tau_theta + t3*tau_psi);
+    omega_3 = sqrt(t1*f_t + t2*tau_phi + t2*tau_theta - t3*tau_psi);
+    omega_4 = sqrt(t1*f_t + t2*tau_phi - t2*tau_theta + t3*tau_psi);
+//fabs()
 }
 
 //Actuate motors with desired total trust force (N) and torques (N.m)
@@ -61,7 +63,7 @@ int main ()
     motor_3.period(1.0/500.0);
     motor_3.period(1.0/500.0);
     //actuate motor with 70% mg total thrust force (N) and zero torques (N.m)
-    actuate(0.7*m*g,0,0,0); //precisa incluir o arq parametro? 
+    actuate(0,0,0,-0.001); //precisa incluir o arq parametro? 
     wait(5);
     //Turn off all motors 
     actuate(0,0,0,0);
