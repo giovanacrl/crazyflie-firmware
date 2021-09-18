@@ -18,6 +18,7 @@ class Mixer
     private:
         //Motors PWM outputs
         PwmOut motor_1, motor_2, motor_3, motor_4;
+        DigitalOut ledgl, ledgr, ledrl, ledrr, ledbl;
         //Angular velocities (rad/s)
         float omega_r_1, omega_r_2, omega_r_3, omega_r_4;
         //Convert total thrust force (N) and torques (N.m) to angular velocities (rad/s)

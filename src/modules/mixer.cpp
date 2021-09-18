@@ -1,7 +1,7 @@
 # include "mixer.h"
 
 // Class constructor
-Mixer :: Mixer () : motor_1 ( MOTOR1 ) , motor_2 ( MOTOR2 ) , motor_3 ( MOTOR3 ) , motor_4 ( MOTOR4 )
+Mixer :: Mixer () : motor_1 ( MOTOR1 ) , motor_2 ( MOTOR2 ) , motor_3 ( MOTOR3 ) , motor_4 ( MOTOR4 ), ledbl(LED_BLUE_L,false), ledgl(LED_GREEN_L,!false), ledgr(LED_GREEN_R,!false), ledrl(LED_RED_L,!false), ledrr(LED_RED_R,!false)
 {
     motor_1 . period (1.0/500.0) ;
     motor_2 . period (1.0/500.0) ;
@@ -16,12 +16,35 @@ Mixer :: Mixer () : motor_1 ( MOTOR1 ) , motor_2 ( MOTOR2 ) , motor_3 ( MOTOR3 )
 
  void Mixer::arm()
  {
-     armed = true;
+    armed = true;
+    if (ledgl == false) {
+    ledgl=true;
+    ledgr=true;
+    }
+    ledrr = false;
+    ledrl = false;
+    ledbl = !ledbl;
+    wait(1);
+    ledbl = !ledbl;
+    wait(1);
+    ledbl = !ledbl;
+    wait(1);
+    ledbl = !ledbl;
+    wait(1);
+    ledbl = !ledbl; 
+    wait(1);
+    ledbl = !ledbl;     
  }
 
 void Mixer::disarm()
 {
     armed = false;
+    if (ledrl == false) {
+    ledrl=true;
+    ledrr=true;
+    }
+    ledgr = false;
+    ledgl = false;
     actuate(0, 0, 0, 0);
 }
 
