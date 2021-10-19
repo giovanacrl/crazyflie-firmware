@@ -24,7 +24,9 @@ const float kl = 1.734e-8;
 // Constante de arrasto kd
 const float kd = 1.482e-10;
 
-
+const float dt = 0.002;
+const float wc = 10;
+const float alpha = (wc*dt)/(1+wc*dt);
 
 
 #endif
