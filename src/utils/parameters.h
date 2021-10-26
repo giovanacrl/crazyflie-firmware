@@ -28,5 +28,13 @@ const float dt = 0.002;
 const float wc = 10;
 const float alpha = (wc*dt)/(1+wc*dt);
 
+//attitude estimator and controller com Ts = 0,3s e OS  = 0,5%
+const float Ts = 0.3;
+const float OS = 0.005 ;
+const float zeta = abs(log(OS))/sqrt(pow(log(OS),2) +  pow(pi,2));
+const float wn = 4/(zeta*Ts);
+const float kp_att = pow(wn,2);
+const float kd_att = 2*zeta*wn;
+
 
 #endif

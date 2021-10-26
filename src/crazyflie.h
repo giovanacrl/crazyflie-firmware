@@ -21,5 +21,6 @@
 #include "modules/mixer.h"
 
 #include "modules/attitude_estimator.h" //duvida ???
+#include "modules/attitude_controller.h"
 
 #endif
