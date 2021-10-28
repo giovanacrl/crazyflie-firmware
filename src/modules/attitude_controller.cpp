@@ -2,7 +2,7 @@
 #include "parameters.h"
 
 
-AttitudeEstimator att_est;
+//AttitudeEstimator att_est;
 //Class constructor 
 AttitudeController::AttitudeController()
 {
