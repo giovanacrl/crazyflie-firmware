@@ -43,6 +43,8 @@ const float wcc = 10;
 const float zetaa = sqrt(2)/2;
 const float l1 = pow(wcc,2);
 const float l2 = 2*zetaa*wcc;
+const float kp_ver = 5.8567;
+const float kd_ver = 3.4225;
 
 
 #endif

@@ -5,7 +5,7 @@
 //#include "programs/examples/ex04_imu.h"
 // #include "programs/examples/ex05_range.h"
 // #include "programs/examples/ex06_flow.h"
-#include "programs/labs/lab09.h"
+#include "programs/labs/lab10.h"
 
 
 // Lab programs
