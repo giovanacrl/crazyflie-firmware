@@ -25,7 +25,7 @@ void AttitudeController::control(float phi_r, float theta_r, float psi_r, float 
     //aceleração theta_r
     atheta_r = control_siso(theta_r, theta, q, kp_att, kd_att);
     //aceleração psi_r
-    apsi_r = control_siso(psi_r, psi, r, kp_att, kd_att);  
+    apsi_r = control_siso(psi_r, psi, r, kp_att2, kd_att2);  
 
     //torques
     tau_phi = I_xx * aphi_r ;

@@ -37,6 +37,13 @@ const float wn = 4/(zeta*Ts);
 const float kp_att = pow(wn,2);
 const float kd_att = 2*zeta*wn;
 
+const float Ts2 = 0.6;
+const float OS2 = 0.005 ;
+const float zeta2 = abs(log(OS2))/sqrt(pow(log(OS2),2) +  pow(pi,2));
+const float wn2 = 4/(zeta2*Ts2);
+const float kp_att2 = pow(wn2,2);
+const float kd_att2 = 2*zeta2*wn2;
+
 //vertical estimator and controller 
 const float dt_range = 0.05;
 const float wcc = 10;
@@ -56,7 +63,13 @@ const float kd_ver = 2 * zeta_ver * wn_ver;
 //horizontal estimator
 const float gamma = 42 * (pi/180);
 const float sigma = (2*tan(gamma/2))/(420*0.002);
-const float l3 = 50; //wc 
+const float l3 = 50; //wc
 
+const float Ts_hor = 2;
+const float OS_hor = 0.005 ;
+const float zeta_hor = abs(log(OS_hor))/sqrt(pow(log(OS_hor),2) +  pow(pi,2));
+const float wn_hor = 4/(zeta_hor*Ts_hor);
+const float kp_hor = pow(wn_hor,2);
+const float kd_hor = 2*zeta_hor*wn_hor;
 
 #endif
