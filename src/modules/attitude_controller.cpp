@@ -37,7 +37,7 @@ void AttitudeController::control(float phi_r, float theta_r, float psi_r, float 
 float AttitudeController::control_siso(float angle_r, float angle, float v_ang, float kp_att, float kd_att)
 {
     //Controlador em cascata 
-    return(kp_att * (angle_r - angle) + kd_att * (0 - v_ang));
+    return(float(kp_att * (angle_r - angle) + kd_att * (0 - v_ang)));
     
 }
 

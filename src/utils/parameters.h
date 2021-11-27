@@ -8,7 +8,7 @@ const float pi = 3.1416;
 const float g = 9.81;       // m/s^2
 
 // Quadcopter dimensions
-const float m = 30.0e-3;    // kg
+const float m = 32.0e-3;    // kg
 const float I_xx = 16.0e-6; // kg.m^2
 const float I_yy = 16.0e-6; // kg.m^2
 const float I_zz = 29.0e-6; // kg.m^2
@@ -65,7 +65,7 @@ const float gamma = 42 * (pi/180);
 const float sigma = (2*tan(gamma/2))/(420*0.002);
 const float l3 = 50; //wc
 
-const float Ts_hor = 2;
+const float Ts_hor = 3;
 const float OS_hor = 0.005 ;
 const float zeta_hor = abs(log(OS_hor))/sqrt(pow(log(OS_hor),2) +  pow(pi,2));
 const float wn_hor = 4/(zeta_hor*Ts_hor);
