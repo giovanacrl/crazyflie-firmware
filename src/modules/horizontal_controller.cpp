@@ -7,6 +7,7 @@ HorizontalController::HorizontalController()
     theta_r = 0.0;
     ax_r = 0.0;
     ay_r = 0.0;
+
 }
 
 //Control reference roll and pitch angles (rad) given reference positions (m) and currentn positions (m) and velocities (m/s)
@@ -24,5 +25,7 @@ void HorizontalController::control(float x_r, float y_r, float x, float y, float
 //Control acceleration given reference position (m) and current position (m) and velocity (m/s) with given controller gains
 float HorizontalController::control_siso(float pos_r, float pos, float vel, float kp, float kd)
 {
-    return (float(kp * (pos_r - pos) + kd * (0 - vel)));
+    //float vx_r = kp * (pos_r - pos);
+    //return float (kd * (vx_r - vel));
+    return (float(kp * (pos_r - pos) + kd * (0.0 - vel)));
 }

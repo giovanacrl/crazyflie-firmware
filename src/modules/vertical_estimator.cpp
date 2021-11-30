@@ -17,10 +17,10 @@ void VerticalEstimator::init()
 void VerticalEstimator::predict(float f_t)
 {
     z = z + w * dt; //3.4.2
-    if (z> 0.05)
-    {
-        w = w + ((1/m)*f_t - g) * dt; //3.4.2
-    }  
+    //if (z> 0.05)
+    //{
+    //    w = w + ((1/m)*f_t - g) * dt; //3.4.2
+    //}  
 }
 
 // Correct vertical position and velocity with measurement
