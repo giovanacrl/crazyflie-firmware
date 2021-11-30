@@ -66,7 +66,7 @@ const float resolution = 420.0;         // px
 const float sigma = (1.0/dt)*(2.0*tan((gamma*pi/180.0)/2.0))/resolution;
 const float l3 = 50; //wc
 
-const float Ts_hor = 3;
+const float Ts_hor = 2;
 const float OS_hor = 0.005 ;
 const float zeta_hor = abs(log(OS_hor))/sqrt(pow(log(OS_hor),2) +  pow(pi,2));
 const float wn_hor = 4/(zeta_hor*Ts_hor);
